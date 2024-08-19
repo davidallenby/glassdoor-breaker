@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Glassdoor Breaker",
+    "version": "0.1.0",
+    "description": "Removes the annoying glassdoor paywall.",
+    "browser_action": {
+        "default_popup": "./background.html"
+    },
+    "permissions": ["activeTab", "scripting"],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.glassdoor.com/*",
+                "https://*.glassdoor.de/*",
+                "https://*.glassdoor.co.uk/*",
+                "https://*.glassdoor.ca/*",
+                "https://*.glassdoor.com.au/*",
+                "https://*.glassdoor.fr/*",
+                "https://*.glassdoor.in/*"
+            ],
+            "js": ["index.js"],
+            "run_at": "document_idle"
+        }
+    ]
+}
